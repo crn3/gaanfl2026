@@ -1,0 +1,47 @@
+<h1>Results</h1>
+<hr>
+
+<app-division-filter [filterControl]="filterControl"></app-division-filter>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Division</th>
+            <th>Home Team</th>
+            <th>Score</th>
+            <th>Score</th>
+            <th>Away Team</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(group of groupedGames; track group.round){
+            <tr>
+                <td colspan="5" style="font-weight:bold">Round {{ group.round }} </td>
+            </tr>
+
+            @for(game of group.games; track game.id){
+                <tr>
+                    <td>{{ game.division }}</td>
+                    <td><span style="display:inline-block; 
+                    width:8px; 
+                    height:8px; 
+                    border-radius:50%;"
+                    [style.background-color]="'rgb(' + game.homeR + ',' + game.homeG + ',' + game.homeB + ')'">
+                </span>
+                {{ game.hteam }}</td>
+                <td> {{ game.hteamscore }}</td>
+                <td> {{ game.ateamscore }} </td>
+                <td><span
+                    style="display:inline-block; 
+                    width:8px; 
+                    height:8px; 
+                    border-radius:50%;"
+                    [style.background-color]="'rgb(' + game.awayR + ',' + game.awayG + ',' + game.awayB + ')'">
+                </span>
+                {{ game.ateam }}</td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>

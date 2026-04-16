@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    
+    <a routerLink="/" class="navbar-brand">
+      <img src="assets/logo.png" style="width: 100px;" />
+    </a>
+
+    <ul class="navbar-nav me-auto nav-item">
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Routes</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/managers">Managers</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/teams">Teams</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/results">Results</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/fixtures">Fixtures</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/team-rank">Team Rankings</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/score-stats">Scoring Stats</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/scoring-stats-2">Scoring Stats II</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/scoring-chart">Scoring Chart</a>
+      </li>
+
+      @if (loggedIn) {
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin">Admin</a>
+        </li>
+    
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="handleLogout()">Logout</a>
+        </li>
+    }
+
+    @else{
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+    }
+
+    </ul>
+  </div>
+</nav>

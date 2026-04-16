@@ -1,0 +1,78 @@
+<h1>Routes</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Route</th>
+            <th>Description</th>
+            <th>URL</th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td>/teams</td>
+            <td>GET teams</td>
+            <td>
+                <a href="http://localhost:3000/teams">http://localhost:3000/teams</a>
+            </td>
+            <td>
+                <button (click)="handleUpdateTextArea('http://localhost:3000/teams')" class="btn btn-primary">GET</button>
+            </td>
+        </tr>
+        <tr>
+            <td>/players</td>
+            <td>GET players</td>
+            <td>
+                <a href="http://localhost:3000/players">http://localhost:3000/players</a>
+            </td>
+            <td>
+                <button (click)="handleUpdateTextArea('http://localhost:3000/players')" class="btn btn-primary">GET</button>
+            </td>
+        </tr>
+        <tr>
+            <td>/managers</td>
+            <td>GET managers</td>
+            <td>
+                <a href="http://localhost:3000/managers">http://localhost:3000/managers</a>
+            </td>
+            <td>
+                <button (click)="handleUpdateTextArea('http://localhost:3000/managers')" class="btn btn-primary">GET</button>
+            </td>
+        </tr>
+        <tr>
+            <td>/fixtures</td>
+            <td>GET fixtures</td>
+            <td>
+                <a href="http://localhost:3000/fixtures">http://localhost:3000/fixtures</a>
+            </td>
+            <td>
+                <button (click)="handleUpdateTextArea('http://localhost:3000/fixtures')" class="btn btn-primary">GET</button>
+            </td>
+        </tr>
+        <tr>
+            <td>/results</td>
+            <td>GET results</td>
+            <td>
+                <a href="http://localhost:3000/results">http://localhost:3000/results</a>
+            </td>
+            <td>
+                <button (click)="handleUpdateTextArea('http://localhost:3000/results')" class="btn btn-primary">GET</button>
+            </td>
+        </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>
+  JSON data
+</p>
+
+<textarea
+  class="form-control"
+  rows="20"
+  [value]="textarea"
+  readonly
+></textarea>

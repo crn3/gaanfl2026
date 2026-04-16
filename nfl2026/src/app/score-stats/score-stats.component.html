@@ -1,0 +1,37 @@
+<h1>Score Stats (per match)</h1>
+<hr>
+<app-division-filter [filterControl]="filterControl"></app-division-filter>
+<hr>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th (click) = "sortBy('name')">Team</th>
+            <th (click) = "sortBy('totalMatches')">Matches</th>
+            <th (click) = "sortBy('totalScore')">Total</th>
+            <th (click) = "sortBy('goals')">Goals</th>
+            <th (click) = "sortBy('twoPts')">2Pts</th>
+            <th (click) = "sortBy('onePts')">1Pts</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(team of filteredDivision; track team.id){
+            <tr>
+                <td><span style="display:inline-block; 
+                    width:8px; 
+                    height:8px; 
+                    border-radius:50%;"
+                    [style.background-color]="'rgb(' + team.r + ',' + team.g + ',' + team.b + ')'">
+                </span>
+                {{ team.name }}</td>
+                <td> {{ team.totalMatches }} </td>
+                <td> {{ team.totalScore }} </td>
+                <td> {{ team.goals }} </td>
+                <td> {{ team.twoPts }} </td>
+                <td> {{ team.onePts }}</td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+

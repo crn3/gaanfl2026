@@ -1,0 +1,18 @@
+<h1>Team Rankings</h1>
+<hr>
+<h4>Who has been the better team lately?</h4>
+
+@if (team1 && team2) {
+  <div class="form-group">
+    <button type="button" class="form-control btn btn-secondary" (click)="vote(team1)" id="button1">
+      {{ team1.name }}
+    </button>
+    <hr>
+    <button type="button" class="form-control btn btn-secondary" (click)="vote(team2)" id="button2">
+      {{ team2.name }}
+    </button>
+  </div>
+}
+
+<hr>
+<label > {{ votes }} votes remaining </label>
