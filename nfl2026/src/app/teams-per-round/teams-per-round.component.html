@@ -1,0 +1,26 @@
+<h2>Teams per Round</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Teams</th>
+            <th>Round 1</th>
+            <th>Round 2</th>
+            <th>Round 3</th>
+            <th>Round 4</th>
+            <th>Round 5</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @for(team of teamsWithRoundStats; track team.name){
+            <tr>
+                <td> {{ team.name }} </td>
+                <td> {{ team.round1_scores }} </td>
+                <td> {{ team.round2_scores }} </td>
+                <td> {{ team.round3_scores }} </td>
+                <td> {{ team.round4_scores }} </td>
+                <td> {{ team.round5_scores }} </td>
+            </tr>
+        }
+    </tbody>
+</table>

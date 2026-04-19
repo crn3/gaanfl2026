@@ -1,21 +1,22 @@
-import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { LoginService } from '../services/login.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, AsyncPipe],
   templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css'
+  styleUrl: './nav.component.css',
 })
 export class NavComponent {
+  loginSerivce = inject(LoginService);
+  router = inject(Router);
 
-  @Input() loggedIn: boolean = false;
-
-  handleLogout(){
-    localStorage.setItem('loggedIn', 'false');
-    this.loggedIn = false;
-  } // this should possibly be a log out service
-  // data and handling it happens elsewhere
-
+  handleLogout(event: Event) {
+    event.preventDefault();
+    this.loginSerivce.logout();
+    this.router.navigate(['/']);
+  }
 }

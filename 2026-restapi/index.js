@@ -36,10 +36,25 @@ app.route("/results").get(function (req, res) {
   model.getResults(req, res);
 });
 
+// get all games
+app.route("/games").get(function (req, res) {
+  model.getGames(req, res);
+});
+
+// update game
+app.route("/games/:id").post(function (req, res) {
+  model.updateGame(req, res);
+});
+
 // update team powerrank
 app.route("/teams/powerrank/:id").post(function (req, res) {
   model.updatePowerRank(req, res);
 });
+
+// get user login details
+app.route("/users").get(function(req,res){
+  model.getUsers(req,res);
+})
 
 var server = app.listen(3000, function () {
   console.log("Server listening on port 3000");

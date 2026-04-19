@@ -1,0 +1,55 @@
+<h1>Results Admin</h1>
+<hr>
+<form [formGroup]="adminForm">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Division</th>
+                <th>Home Team</th>
+                <th></th>
+                <th></th>
+                <th>Away Team</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody formArrayName="games">
+            @for (gameGroup of gamesArray.controls; track $index) {
+                <tr class="table-active"><td colspan="6" ></td></tr>
+            <tr [formGroupName]="$index">
+                <td>{{ gameGroup.get('division')?.value }}</td>
+
+                <td>
+                    @if (isTeam(gameGroup.get('hteam')?.value)) {
+                    {{ gameGroup.get('hteam')?.value }}
+                    } @else {
+                    <input class="form-control" formControlName="hteam">
+                    }
+                </td>
+
+                <td>
+                    <input class="form-control" formControlName="hteamscore">
+                </td>
+
+                <td>
+                    <input class="form-control" formControlName="ateamscore">
+                </td>
+
+                <td>
+                    @if (isTeam(gameGroup.get('ateam')?.value)) {
+                    {{ gameGroup.get('ateam')?.value }}
+                    } @else {
+                    <input class="form-control" formControlName="ateam">
+                    }
+                </td>
+
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="updateGame($index)">
+                        Update
+                    </button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</form>

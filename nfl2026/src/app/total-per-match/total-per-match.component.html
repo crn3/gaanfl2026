@@ -1,0 +1,26 @@
+<h1>Total per match</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Division</th>
+            <th>Round 1</th>
+            <th>Round 2</th>
+            <th>Round 3</th>
+            <th>Round 4</th>
+            <th>Round 5</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @for(division of divisions; track division.division){
+            <tr>
+                <td> {{ division.division }} </td>
+                <td> {{ division.round1_scores }} </td>
+                <td> {{ division.round2_scores }} </td>
+                <td> {{ division.round3_scores }} </td>
+                <td> {{ division.round4_scores }} </td>
+                <td> {{ division.round5_scores }} </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Team</th>
+            <th>For</th>
+            <th>Against</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(team of teamForAgainst; track team.name)
+        {
+            <tr>
+                <td>
+                    <span
+                    style="display:inline-block; 
+                    width:8px; 
+                    height:8px; 
+                    border-radius:50%;"
+                    [style.background-color]="'rgb(' + team.r + ',' + team.g + ',' + team.b + ')'">
+                    </span> {{ team.name }}
+                </td>
+                <td> {{ team.scoresFor }} </td>
+                <td> {{ team.scoresAgainst }} </td>
+            </tr>
+        }
+    </tbody>
+</table>
